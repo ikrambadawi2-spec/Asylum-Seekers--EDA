@@ -44,4 +44,16 @@ st.plotly_chart(px.bar(data_frame=top_origin, x='Origin',
        y='Applied during year',
     title='Top 10 Countries of Origin'))
 
-#
+df_procedure = df.groupby('RSD procedure type / level')['Total decisions'].sum().reset_index().sort_values('Total decisions', ascending= False)
+
+st.plotly_chart(px.bar(data_frame= df_procedure, x= 'RSD procedure type / level',
+       y= 'Total decisions', text_auto = True,
+       title= 'RSD Procedure Type VS Total Decisions'))
+
+highest_asylum_Hosting = (df.groupby('Country / territory of asylum/residence')['Applied during year']
+                        .sum().sort_values(ascending=False).reset_index().head(10))
+
+st.plotly_chart(px.pie(data_frame= highest_asylum_Hosting, names= 'Country / territory of asylum/residence', 
+       values= 'Applied during year',
+       title= 'Top Asylum-Hosting Countries',
+       hole= 0.3))
