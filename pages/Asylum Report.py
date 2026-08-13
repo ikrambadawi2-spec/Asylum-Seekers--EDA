@@ -8,7 +8,7 @@ st.set_page_config(page_title= 'Asylum EDA', layout= 'wide')
 
 #Add Title
 
-st.markdown("<h1 style='text-align: center; color: black;'>Marketing Report</h1>", unsafe_allow_html= True)
+st.markdown("<h1 style='text-align: center; color: black;'>Asylum Report</h1>", unsafe_allow_html= True)
 
 #Add Image
 st.image("https://myattorneyusa.com/wp-content/uploads/2026/01/asylum-seekers.jpg")
